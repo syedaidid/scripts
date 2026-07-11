@@ -1,0 +1,10 @@
+#!/bin/bash
+title=$(spt current | awk '{$1=""; print $0}' |sed -n 4p | xargs ) 
+artist=$(spt current | awk '{$1=""; print $0}' |sed -n 2p) 
+msic="$artist -[$title]" 
+if [[ -n $title ]] 
+then
+		printf "%s\n" "$msic"
+else 
+		printf ""
+fi

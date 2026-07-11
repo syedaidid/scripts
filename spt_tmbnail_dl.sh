@@ -1,0 +1,5 @@
+art=$(spt art)
+title=$(spt current | awk '{$1=""; print $0}' |sed -n 4p | xargs ) 
+ext=$(file unnamed.jpg | awk '{print $2}' |  tr '[:upper:]' '[:lower:]')
+download=$(wget -c $art -O /home/syed/music/tm/"$title")
+chg_ext=$(mv /home/syed/music/tm/"$title" /home/syed/music/tm/"$title".$ext)

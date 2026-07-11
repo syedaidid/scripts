@@ -1,0 +1,3 @@
+#!/bin/bash
+a=$(cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor)
+echo "$a"

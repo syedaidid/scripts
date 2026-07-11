@@ -1,0 +1,5 @@
+#!/bin/bash
+echo Enter Link Here 👇
+read link
+echo Wait....
+yt-dlp -f "best[height>=720]" $link -o '%(id)s.%(ext)s'

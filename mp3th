@@ -1,0 +1,6 @@
+#!/bin/bash
+echo Enter link:
+read link
+echo Enter archive file name
+read file
+yt-dlp --download-archive $file.txt -f 'ba' -x --audio-format mp3 $link --embed-thumbnail --convert-thumbnail jpg --embed-metadata  --ppa "EmbedThumbnail+ffmpeg_o:-c:v mjpeg -vf crop=\"'if(gt(ih,iw),iw,ih)':'if(gt(iw,ih),ih,iw)'\""

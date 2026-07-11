@@ -1,0 +1,6 @@
+#!/bin/bash
+while :;
+do
+notify-send -u critical "Pls Stream" &
+sleep 600
+done

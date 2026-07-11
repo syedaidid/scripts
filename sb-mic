@@ -1,0 +1,8 @@
+#!/bin/bash
+a=$(amixer | sed -n 13p | awk '{print $6}')
+if [[ $a == "[off]" ]]
+then
+  echo "🔇"
+else
+  echo "🎙"
+fi

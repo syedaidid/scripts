@@ -1,0 +1,3 @@
+#!/bin/bash
+# a=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
+pamixer --get-volume

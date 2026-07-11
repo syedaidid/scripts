@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "directory"
+read dir
+echo ".txt file name"
+read name
+cd $dir 
+for file in *.mp3 
+do
+  ffprobe -loglevel error -show_entries format_tags=title -of default=noprint_wrappers=1:nokey=1 "$file" >> ~/music/$name.txt
+done

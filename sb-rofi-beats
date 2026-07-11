@@ -1,0 +1,8 @@
+#!/bin/bash
+a=$(cat ~/.local/bin/rofi-beats.txt)
+if [[ a == "" ]]
+then
+  printf ""
+else 
+  printf "$a"
+fi

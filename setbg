@@ -1,0 +1,16 @@
+#!/bin/bash
+wallpaper=$(ls /home/kizo/pix/wall/ | fzf) 
+wal -i /home/kizo/pix/wall/$wallpaper
+sed -i 'N;$!P;D' /home/kizo/.cache/wal/colors-wal-dwm.h
+# sed -i 's/#//g' .cache/wal/theme.yaml
+#wal-telegram --wal --tiled
+(cd /home/kizo/github/dwm/ && sudo make clean install> /dev/null)
+(cd /home/kizo/github/dmenu/ && sudo make clean install> /dev/null)
+#(cd /home/kizo/github/tabbed/ && doas make clean install> /dev/null)
+#(killall dwmblocks)
+#(killall xautolock)
+# (killall picom)
+(killall greenclip)
+(killall xidlelock)
+(killall xss-lock)
+#(killall telegram-desktop)

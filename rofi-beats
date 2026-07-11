@@ -1,0 +1,136 @@
+#!/bin/sh
+
+notification1(){
+	notify-send "Now Playing:" "Samurai Lofi ☕"
+	echo "Samurai Lofi ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification2(){
+	notify-send "Now Playing:" "Rain Sound Piano ☕️"
+	echo "Rain Sound Piano ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification3(){
+	notify-send "Now Playing:" "Last Train to London ☕️"
+	echo "Last Train to London ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification4(){
+	notify-send "Now Playing:" "Coffee Shop Radio ☕️"
+	echo "Coffee Shop Radio ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification5(){
+	notify-send "Now Playing:" "Radio Spinner ☕️ "
+	echo "Radio Spinner ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+	
+notification6(){
+	notify-send "Now Playing:" "SmoothChill ☕️ "
+	echo "SmoothChill ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification7(){
+	notify-send "Now Playing:" "Anime Lofi ☕️ "
+	echo "Anime Lofi ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification8(){
+	notify-send "Now Playing:" "Lofi Hip Hop ☕️ " 
+	echo "Lofi Hip Hop ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification9(){
+	notify-send "Now Playing:" "JPop Cafe Music ☕️ "
+	echo "JPop Cafe Music ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification10(){
+	notify-send "Now Playing:" "Tokyo Cafe ☕️ "
+	echo "Tokyo Cafe ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+notification11(){
+	notify-send "Now Playing:" "Sunday Morning Jazz ☕️ "
+	echo "Sunday Morning Jazz ☕" > /home/syed/.local/bin/rofi-beats.txt
+}
+
+menu(){
+	printf "1. Samurai Lofi\n"
+	printf "2. Rain Sound Piano\n"
+	printf "3. Last Train to London\n"
+	printf "4. Coffee Shop Radio\n"
+	printf "5. Radio Spinner\n"
+	printf "6. SmoothChill\n"
+	printf "7. Anime Lofi\n"
+	printf "8. Lofi Hip Hop\n"
+	printf "9. J-Pop Cafe Music\n"
+	printf "10. Tokyo Cafe\n"
+	printf "11. Sunday Morning Jazz"
+}
+
+main() {
+	choice=$(menu | rofi -dmenu -i | cut -d. -f1)
+
+	case $choice in
+		1)
+			notification1 ;
+				mpv https://www.youtube.com/watch\?v\=jrTMMG0zJyI\&list\=WL\&index\=3 --no-video --title="radio-mpv"
+			break
+			;;
+		2)
+			notification2 ;
+				mpv --title="radio-mpv" "https://www.youtube.com/watch?v=Eo5RPdTt0e0&list=WL&index=2" --no-video
+			break
+			;;
+		3)
+			notification3 ;
+				mpv --title="radio-mpv" "https://www.youtube.com/watch?v=I0hcX1U0kuo&list=WL&index=5" --no-video
+			break
+			;;
+		4)
+			notification4 ;
+				mpv --title="radio-mpv" "https://www.youtube.com/watch?v=-5KAN9_CzSA&list=WL&index=3" --no-video
+			break
+			;;
+		5)
+			notification5 ;
+				mpv --title="radio-mpv" "https://live.radiospinner.com/lofi-hip-hop-64"
+			break
+			;;
+		6)
+			notification6 ;
+				mpv --title="radio-mpv" "https://media-ssl.musicradio.com/SmoothChill"
+			break
+			;;
+		7)
+			notification7 ;
+				mpv --title="radio-mpv" "https://www.youtube.com/watch?v=w3LWHIz3bMc" --no-video
+			break
+		 ;;
+	  8)
+			notification8 ;
+				mpv --title="radio-mpv" "https://www.youtube.com/watch?v=5qap5aO4i9A" --no-video
+			break
+		 ;;
+		9)
+			notification9 ;
+				mpv --title="radio-mpv" "https://www.youtube.com/watch?v=pbqbnSQ5pxw" --no-video
+			break
+			;;
+		10)
+			notification10 ; 
+				mpv --title="radio-mpv" "https://www.youtube.com/watch?v=6uddGul0oAc" --no-video
+			break
+			;;
+		11)
+			notification11 ; 
+				mpv --title="radio-mpv" "https://www.youtube.com/watch?v=BhURXHqZzS4" --no-video
+			break
+			;;
+	
+	esac
+}
+
+pkill -f radio-mpv || main
+echo "" > ~/.local/bin/rofi-beats.txt
