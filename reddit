@@ -48,7 +48,7 @@ configdir="${XDG_CONFIG_HOME:-$HOME/.config}/redyt"
 
 # Default subreddit that will be inserted in "subreddit.txt"
 # if it does not exist
-defaultsub="linuxmemes"
+defaultsub="bolehland"
 
 # If subreddit.txt does not exist, create it to prevent
 # the program from not functioning properly
