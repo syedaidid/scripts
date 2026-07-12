@@ -1,0 +1,115 @@
+alt + p 
+	rofi -show drun -show-icons
+
+super + p
+	dmenu_run
+
+super + control + p 
+	mpc toggle
+	
+super + control + period
+	mpc next
+
+super + control + comma
+	mpc prev
+
+super + Return
+	st 
+
+shift + Print 
+	gnome-screenshot -a
+
+Print
+	gnome-screenshot 
+
+alt + Print
+	sscp
+
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Brightness
+XF86MonBrightnessUp
+	brightnessctl s +50; notify-brightness.sh
+
+XF86MonBrightnessDown
+	brightnessctl s 50-; notify-brightness.sh
+
+#Volume
+alt + comma
+	playerctl previous
+	# pamixer -d 5; kill -35 $(pidof dwmblocks); notify-volume.sh
+
+alt + period
+	playerctl next
+	# pamixer -i 5; kill -35 $(pidof dwmblocks); notify-volume.sh
+
+XF86AudioRaiseVolume
+	pamixer -i 5; kill -35 $(pidof dwmblocks); notify-volume.sh
+XF86AudioLowerVolume
+	pamixer -d 5; kill -35 $(pidof dwmblocks); notify-volume.sh
+
+XF86AudioMute
+	pamixer -t; kill -35 $(pidof dwmblocks); notify-volume.sh
+
+#Mic 
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Mpd
+super + shift + m
+	killall mpd
+
+super + alt + m
+	mpd
+
+
+# Lock and suspend
+XF86Launch1
+	systemctl suspend
+
+
+control + grave
+    dunstctl history-pop
+
+control + shift + grave
+	dunstctl close
+
+alt + shift + grave
+	dunstctl context
+
+XF86AudioPlay 
+	playerctl play-pause; notify-player.sh
+
+# XF86AudioNext
+
+super + comma
+	playerctl next
+
+XF86AudioPrev
+	playerctl previous
+
+control + shift + e
+	killall eww
+
+super + shift + d
+	launch_dashboard
+
+super + shift + n
+	notify.sh
+
+alt + shift + n
+	killall notify.sh
+
+alt + shift + e
+	rofi -modi emoji -show emoji
+
+alt + shift + c
+	rofi -modi "clipboard:greenclip print" -show 
+
+super + alt + n
+  dmenunotes
+
+super + l
+  systemctl suspend
